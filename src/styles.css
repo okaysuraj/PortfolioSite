@@ -1,0 +1,133 @@
+@font-face {
+  font-family: 'Mona Sans';
+  src: url('/assets/lando/67bc6274c5b4108b123aa4d5_MonaSans-VariableFont_wdth%2Cwght.woff2') format('woff2');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+
+:root {
+  /* Lando Norris Core Palette */
+  --color--lime: #d2ff00;
+  --color--dark-green: #101400;
+  --color--grey-1: #e1e1e1;
+  --color--grey-2: #8a8a8a;
+  --color--white: #ffffff;
+  --color--black: #000000;
+  
+  /* Fonts */
+  --font-sans: 'Mona Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Mona Sans', system-ui, sans-serif;
+
+  /* Scaling / Sizes */
+  --fluid-font: clamp(16px, 1.2vw, 22px);
+  --section-padding: clamp(60px, 10vw, 120px);
+  --container-padding: clamp(20px, 5vw, 48px);
+  --container-max: 1728px;
+  
+  --transition-base: all 0.75s cubic-bezier(0.65, 0.05, 0, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--color--dark-green);
+  color: var(--color--white);
+  font-family: var(--font-sans);
+  font-size: var(--fluid-font);
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: var(--color--lime);
+  color: var(--color--black);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Base Utility Classes */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Global Noise Overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Typography Helpers */
+.text-huge {
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.text-impact {
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.text-eyebrow {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color--lime);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  background-color: var(--color--lime);
+  color: var(--color--black);
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 100px;
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+/* SplitType animation base */
+.line {
+  overflow: hidden;
+}
+.char {
+  transform: translateY(100%);
+  transition: transform 0.8s cubic-bezier(0.65, 0.05, 0, 1);
+}
+.is-visible .char {
+  transform: translateY(0);
+}
