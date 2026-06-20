@@ -1,22 +1,17 @@
 import React, { useRef } from 'react'
 
-const helmets = [
-  { id: 1, year: '2024', name: 'Upcycle', desc: 'Sustainable item tracking system' },
-  { id: 2, year: '2025', name: 'SarvUday', desc: 'Community welfare portal' },
-  { id: 3, year: '2025', name: 'Mandate', desc: 'Automated workflow management' },
-  { id: 4, year: '2025', name: 'Ansaea', desc: 'Financial data aggregation' },
-  { id: 5, year: '2025', name: 'Localite', desc: 'Local business discovery platform' },
-  { id: 6, year: '2026', name: 'VoteKinetic', desc: 'Blockchain based voting platform' },
-  { id: 7, year: '2026', name: 'Omnidrop', desc: 'Cross-platform file sharing' },
-  { id: 8, year: '2026', name: 'Truehand', desc: 'Decentralized identity verification' },
+const experiences = [
+  { id: 1, year: '2023 - Present', role: 'Software Engineer', company: 'Tech Innovators', desc: 'Leading frontend development, improving performance, and architecting scalable web applications.' },
+  { id: 2, year: '2021 - 2023', role: 'Frontend Developer', company: 'Creative Solutions', desc: 'Developed responsive UIs, integrated REST APIs, and worked closely with designers.' },
+  { id: 3, year: '2019 - 2021', role: 'Web Developer', company: 'Digital Agency', desc: 'Built and maintained client websites, optimized SEO, and managed deployment pipelines.' },
+  { id: 4, year: '2018 - 2019', role: 'Developer Intern', company: 'StartUp Inc', desc: 'Assisted in building internal tools, writing unit tests, and fixing bugs.' },
 ]
 
-function HelmetCard({ helmet, index }) {
+function ExperienceCard({ exp, index }) {
   const [isHovered, setIsHovered] = React.useState(false)
 
   return (
     <div
-      onClick={() => window.open(`https://github.com/okaysuraj/${helmet.name.toLowerCase()}`, '_blank')}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
@@ -31,7 +26,6 @@ function HelmetCard({ helmet, index }) {
         flexDirection: 'column',
         justifyContent: 'space-between',
         padding: '1.5rem',
-        // Zig-zag stagger instead of continuous step down
         marginTop: index % 2 === 0 ? '0' : '5rem',
         transition: 'transform 0.4s ease, box-shadow 0.4s ease',
         transform: isHovered ? 'translateY(-10px)' : 'translateY(0)',
@@ -39,12 +33,15 @@ function HelmetCard({ helmet, index }) {
       }}
     >
       <div style={{ zIndex: 2, position: 'relative' }}>
-        <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'blue' }}>{helmet.year}</span>
-        <h3 style={{ fontSize: '1.3rem', fontWeight: 800, textTransform: 'uppercase', lineHeight: 1.1, color: 'var(--color--dark-green)' }}>
-          {helmet.name}
+        <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'blue' }}>{exp.year}</span>
+        <h3 style={{ fontSize: '1.3rem', fontWeight: 800, textTransform: 'uppercase', lineHeight: 1.1, color: 'var(--color--dark-green)', marginTop: '0.2rem' }}>
+          {exp.role}
         </h3>
+        <p style={{ color: 'var(--color--lime)', fontWeight: 800, fontSize: '0.9rem', marginTop: '0.25rem', background: 'var(--color--dark-green)', display: 'inline-block', padding: '0.2rem 0.5rem', borderRadius: '4px' }}>
+          {exp.company}
+        </p>
         <p style={{ color: 'rgba(0, 0, 0, 0.6)', fontSize: '0.9rem', lineHeight: 1.4, fontWeight: 500, marginTop: '1rem' }}>
-          {helmet.desc}
+          {exp.desc}
         </p>
       </div>
 
@@ -62,17 +59,7 @@ function HelmetCard({ helmet, index }) {
   )
 }
 
-/* ─────────────────────────────────────────────
-   HelmetGrid: Scroll-driven horizontal slider.
-
-   - Section is tall enough so all cards can
-     slide through before the page moves on
-   - Sticky viewport holds the track
-   - translateX driven purely by scroll
-   - Page ONLY scrolls past once all cards
-     have finished sliding right-to-left
-   ───────────────────────────────────────────── */
-export default function HelmetGrid() {
+export default function Experience() {
   const sectionRef = useRef(null)
   const trackRef = useRef(null)
 
@@ -103,12 +90,13 @@ export default function HelmetGrid() {
   return (
     <section
       ref={sectionRef}
-      id="helmet"
+      id="experience"
       style={{
         position: 'relative',
-        height: `${helmets.length * 35}vh`,
+        height: `${experiences.length * 35}vh`,
         width: '100%',
-        background: 'var(--color--white)',
+        background: 'var(--color--dark-green)',
+        color: 'var(--color--white)',
       }}
     >
       <div style={{
@@ -124,7 +112,7 @@ export default function HelmetGrid() {
         {/* Header */}
         <div style={{ position: 'absolute', top: '120px', left: '15vw', zIndex: 10 }}>
           <p className="text-eyebrow" style={{ color: 'var(--color--lime)', marginBottom: '0.25rem', fontWeight: 800, fontSize: '0.6rem' }}>
-            Showcase
+            Career
           </p>
           <h2 style={{
             fontSize: 'clamp(1rem, 2.5vw, 2rem)',
@@ -132,10 +120,10 @@ export default function HelmetGrid() {
             textTransform: 'uppercase',
             lineHeight: 0.9,
             letterSpacing: '-0.04em',
-            color: 'var(--color--dark-green)',
+            color: 'var(--color--white)',
             margin: 0
           }}>
-            MY PROJECTS
+            MY EXPERIENCE
           </h2>
         </div>
 
@@ -150,18 +138,11 @@ export default function HelmetGrid() {
             marginTop: '110px',
           }}
         >
-          {helmets.map((helmet, idx) => (
-            <HelmetCard key={helmet.id} helmet={helmet} index={idx} />
+          {experiences.map((exp, idx) => (
+            <ExperienceCard key={exp.id} exp={exp} index={idx} />
           ))}
         </div>
       </div>
-
-      <style>{`
-        @keyframes scrollPulse {
-          0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
-          50% { opacity: 1; transform: scaleY(1); }
-        }
-      `}</style>
     </section>
   )
 }

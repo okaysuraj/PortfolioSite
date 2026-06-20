@@ -4,32 +4,22 @@ const skillsData = [
   {
     title: 'FRONTEND',
     desc: 'React, Next.js, WebGL, Three.js, GSAP, Framer Motion, Tailwind, Vanilla CSS.',
-    base: '68305139c5020a27624aa793_In-helm-2019-base.webp',
-    hover: '6830513c652a87f862917de3_In-helm-2019-hover.webp'
   },
   {
     title: 'BACKEND',
     desc: 'Node.js, Express, Python, Go. Building scalable microservices and APIs.',
-    base: '68305203f28384dcf8ef81cb_In-helm-2020-Silverstone-base.webp',
-    hover: '68305223cddca8f1ea359a7a_In-helm-2020-Silverstone-hover.webp'
   },
   {
     title: 'PERFORMANCE',
     desc: 'Obsessed with 60fps. Optimization, memoization, custom shaders.',
-    base: '68305038652a87f86290bf3b_ln-helm-2021-base.webp',
-    hover: '68305b57817f019bc368a7b6_ln-helm-2021-hover.webp'
   },
   {
     title: 'DATABASE',
     desc: 'PostgreSQL, MongoDB, Redis. Data modeling and efficient querying.',
-    base: '683052a8a475dfa06075ca17_In-helm-2022-Basketball-base.webp',
-    hover: '683052ab1073a33331767d2a_In-helm-2022-Basketball-hover.webp'
   },
   {
     title: 'DEPLOYMENT',
     desc: 'Docker, AWS, Vercel, CI/CD pipelines, Github Actions.',
-    base: '68305a153de4a824d397d21d_In-helm-2023-Chrome-base.webp',
-    hover: '68305a175a720573cbd3000f_In-helm-2023-Chrome-hover.webp'
   }
 ]
 
@@ -53,6 +43,9 @@ function SkillCard({ skill, index }) {
         justifyContent: 'space-between',
         padding: '1.5rem',
         marginTop: index % 2 === 0 ? '0' : '5rem',
+        transition: 'transform 0.4s ease, box-shadow 0.4s ease',
+        transform: isHovered ? 'translateY(-10px)' : 'translateY(0)',
+        boxShadow: isHovered ? '0 15px 30px rgba(0,0,0,0.1)' : 'none',
       }}
     >
       <div style={{ zIndex: 2, position: 'relative' }}>
@@ -62,21 +55,6 @@ function SkillCard({ skill, index }) {
         <p style={{ color: 'rgba(0, 0, 0, 0.6)', fontSize: '0.9rem', lineHeight: 1.3, fontWeight: 500, marginTop: '0.5rem' }}>
           {skill.desc}
         </p>
-      </div>
-
-      <div style={{
-        position: 'absolute',
-        top: '25%', left: '8%', right: '8%', bottom: '15%',
-        zIndex: 1,
-        transition: 'transform 0.6s cubic-bezier(0.16,1,0.3,1)',
-        transform: isHovered ? 'scale(1.12) rotate(5deg)' : 'scale(1) rotate(0deg)',
-      }}>
-        <img
-          src={`/assets/lando/${isHovered ? skill.hover : skill.base}`}
-          alt={skill.title}
-          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-          loading="lazy"
-        />
       </div>
 
       <div style={{ zIndex: 2, alignSelf: 'flex-end' }}>
@@ -142,10 +120,9 @@ export default function Skills() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        paddingTop: '100px', // Prevents title from hiding behind navbar
       }}>
         {/* Header */}
-        <div style={{ position: 'absolute', top: '100px', left: '15vw', zIndex: 10 }}>
+        <div style={{ position: 'absolute', top: '120px', left: '15vw', zIndex: 10 }}>
           <p className="text-eyebrow" style={{ color: 'var(--color--lime)', marginBottom: '0.25rem', fontWeight: 800, fontSize: '0.6rem' }}>
             Capabilities
           </p>
@@ -171,7 +148,7 @@ export default function Skills() {
             paddingLeft: '15vw',
             paddingRight: '15vw',
             willChange: 'transform',
-            marginTop: '100px',
+            marginTop: '110px',
           }}
         >
           {skillsData.map((skill, idx) => (

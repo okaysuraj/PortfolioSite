@@ -4,6 +4,7 @@ import Nav from './components/Nav'
 
 // Lazy load sections
 const HeroWebGL = lazy(() => import('./components/sections/HeroWebGL'))
+const Experience = lazy(() => import('./components/sections/Experience'))
 const HelmetGrid = lazy(() => import('./components/sections/HelmetGrid'))
 const Skills = lazy(() => import('./components/sections/Skills'))
 const Contact = lazy(() => import('./components/sections/Contact'))
@@ -65,6 +66,7 @@ function App() {
         <main className="page-content">
           <Suspense fallback={<LoadingFallback />}>
             <HeroWebGL />
+            <Experience />
             <HelmetGrid />
             <Skills />
             <Contact />

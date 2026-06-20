@@ -45,6 +45,9 @@ export default function Nav() {
 
       {/* Desktop Links */}
       <div style={{ display: 'flex', gap: '3rem', fontWeight: 600, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+        <button onClick={() => navigateWithTransition('#experience')} className="nav-link" style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', fontFamily: 'inherit', fontWeight: 'inherit', fontSize: 'inherit', textTransform: 'inherit', letterSpacing: 'inherit', padding: 0 }}>
+          My Experience
+        </button>
         <button onClick={() => navigateWithTransition('#my-skills')} className="nav-link" style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', fontFamily: 'inherit', fontWeight: 'inherit', fontSize: 'inherit', textTransform: 'inherit', letterSpacing: 'inherit', padding: 0 }}>
           My Skills
         </button>

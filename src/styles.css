@@ -131,3 +131,59 @@ ul {
 .is-visible .char {
   transform: translateY(0);
 }
+
+/* Hero Section Styles */
+.hero-layout {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  margin-top: 80px;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .hero-layout {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    gap: 4rem;
+  }
+}
+
+.hero-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  flex: 1;
+}
+
+@media (min-width: 992px) {
+  .hero-text-container {
+    align-items: flex-start;
+  }
+}
+
+.hero-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.hero-image:hover {
+  transform: translateY(-10px);
+}
