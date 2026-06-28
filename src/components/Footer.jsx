@@ -28,8 +28,8 @@ export default function Footer() {
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <h4 className="text-eyebrow" style={{ color: 'var(--color--grey-2)', marginBottom: '1.5rem' }}>Social</h4>
             <ul style={{ display: 'flex', gap: '2rem', fontWeight: 600, listStyle: 'none', padding: 0, margin: 0 }}>
-              <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>LinkedIn</a></li>
-              <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>GitHub</a></li>
+              <li><a href="https://linkedin.com/in/okaysuraj" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>LinkedIn</a></li>
+              <li><a href="https://github.com/okaysuraj" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>GitHub</a></li>
             </ul>
           </div>
         </div>

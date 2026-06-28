@@ -1,10 +1,8 @@
 import React, { useRef } from 'react'
 
 const experiences = [
-  { id: 1, year: '2023 - Present', role: 'Software Engineer', company: 'Tech Innovators', desc: 'Leading frontend development, improving performance, and architecting scalable web applications.' },
-  { id: 2, year: '2021 - 2023', role: 'Frontend Developer', company: 'Creative Solutions', desc: 'Developed responsive UIs, integrated REST APIs, and worked closely with designers.' },
-  { id: 3, year: '2019 - 2021', role: 'Web Developer', company: 'Digital Agency', desc: 'Built and maintained client websites, optimized SEO, and managed deployment pipelines.' },
-  { id: 4, year: '2018 - 2019', role: 'Developer Intern', company: 'StartUp Inc', desc: 'Assisted in building internal tools, writing unit tests, and fixing bugs.' },
+  { id: 1, year: 'Nov 2025 - Present', role: 'Software Engineer', company: 'LTM Limited', desc: 'Leading DevOps team.' },
+ { id: 2, year: '2021 - 2025', role: 'B.Tech', company: 'Tezpur University, Assam', desc: 'Bachelor of Technology in Computer Science' }
 ]
 
 function ExperienceCard({ exp, index }) {
@@ -93,7 +91,7 @@ export default function Experience() {
       id="experience"
       style={{
         position: 'relative',
-        height: `${experiences.length * 35}vh`,
+        height: `${Math.max(150, experiences.length * 35)}vh`,
         width: '100%',
         background: 'var(--color--dark-green)',
         color: 'var(--color--white)',

@@ -4,7 +4,6 @@ import { navigateWithTransition } from '../utils/transition'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,31 +38,9 @@ export default function Nav() {
     >
       {/* Brand Logo - Simple Text or LN4 SVG */}
       <a href="#" style={{ fontSize: '1.5rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '-0.02em', display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none', color: 'inherit' }}>
-        <img src="/assets/lando/67f517cdc5bb460c3c3b8e5b_ln4-LN-logo-svg.svg" alt="Suraj Kumar Logo" width="32" height="32" style={{ objectFit: 'contain' }} />
+        <img src="/assets/sk_logo.svg" alt="Suraj Kumar Logo" width="32" height="32" style={{ objectFit: 'contain' }} />
         SURAJ KUMAR
       </a>
-
-      {/* Desktop Links */}
-      <div style={{ display: 'flex', gap: '3rem', fontWeight: 600, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-        <button onClick={() => navigateWithTransition('#experience')} className="nav-link" style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', fontFamily: 'inherit', fontWeight: 'inherit', fontSize: 'inherit', textTransform: 'inherit', letterSpacing: 'inherit', padding: 0 }}>
-          My Experience
-        </button>
-        <button onClick={() => navigateWithTransition('#my-skills')} className="nav-link" style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', fontFamily: 'inherit', fontWeight: 'inherit', fontSize: 'inherit', textTransform: 'inherit', letterSpacing: 'inherit', padding: 0 }}>
-          My Skills
-        </button>
-        <button onClick={() => navigateWithTransition('#contact')} className="nav-link" style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', fontFamily: 'inherit', fontWeight: 'inherit', fontSize: 'inherit', textTransform: 'inherit', letterSpacing: 'inherit', padding: 0 }}>
-          Contact Me
-        </button>
-      </div>
-
-      {/* Mobile Hamburger (Hidden on desktop) */}
-      <button 
-        className="nav-ham" 
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        style={{ display: 'none' /* Will be handled by media query later */ }}
-      >
-        Menu
-      </button>
     </motion.nav>
   )
 }

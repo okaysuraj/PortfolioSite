@@ -1,14 +1,14 @@
 import React, { useRef } from 'react'
 
 const helmets = [
-  { id: 1, year: '2024', name: 'Upcycle', desc: 'Sustainable item tracking system' },
-  { id: 2, year: '2025', name: 'SarvUday', desc: 'Community welfare portal' },
-  { id: 3, year: '2025', name: 'Mandate', desc: 'Automated workflow management' },
-  { id: 4, year: '2025', name: 'Ansaea', desc: 'Financial data aggregation' },
-  { id: 5, year: '2025', name: 'Localite', desc: 'Local business discovery platform' },
+  { id: 1, year: '2024', name: 'Upcycle', desc: 'Sustainable resource tracking system' },
+  { id: 2, year: '2025', name: 'SarvUday', desc: 'AI-driven Mental Health Support System' },
+  { id: 3, year: '2025', name: 'Mandate', desc: 'Classic Task Management App' },
+  { id: 4, year: '2025', name: 'Ansaea', desc: 'Doctors and Patients communication platform' },
+  { id: 5, year: '2025', name: 'Localite', desc: 'Meeting and Organizing local events platform' },
   { id: 6, year: '2026', name: 'VoteKinetic', desc: 'Blockchain based voting platform' },
-  { id: 7, year: '2026', name: 'Omnidrop', desc: 'Cross-platform file sharing' },
-  { id: 8, year: '2026', name: 'Truehand', desc: 'Decentralized identity verification' },
+  { id: 7, year: '2026', name: 'Omnidrop', desc: 'Marketplace for local grocery and food items' },
+  { id: 8, year: '2026', name: 'Truehand', desc: 'Ecommerce platform for hand crafted items' },
 ]
 
 function HelmetCard({ helmet, index }) {
@@ -62,16 +62,6 @@ function HelmetCard({ helmet, index }) {
   )
 }
 
-/* ─────────────────────────────────────────────
-   HelmetGrid: Scroll-driven horizontal slider.
-
-   - Section is tall enough so all cards can
-     slide through before the page moves on
-   - Sticky viewport holds the track
-   - translateX driven purely by scroll
-   - Page ONLY scrolls past once all cards
-     have finished sliding right-to-left
-   ───────────────────────────────────────────── */
 export default function HelmetGrid() {
   const sectionRef = useRef(null)
   const trackRef = useRef(null)

@@ -29,7 +29,7 @@ export default function Contact() {
               opacity: 0.6, 
               marginBottom: '1rem' 
             }}>
-              Ready to create something?
+              Ready to collaborate on something?
             </p>
             
             <h2 style={{
@@ -78,8 +78,8 @@ export default function Contact() {
             letterSpacing: '0.05em'
           }}>
             {[
-              { name: 'GitHub', url: 'https://github.com' },
-              { name: 'LinkedIn', url: 'https://linkedin.com' }
+              { name: 'GitHub', url: 'https://github.com/okaysuraj' },
+              { name: 'LinkedIn', url: 'https://linkedin.com/in/okaysuraj' }
             ].map((social, i) => (
               <a 
                 key={social.name} 

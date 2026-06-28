@@ -3,23 +3,23 @@ import React, { useRef } from 'react'
 const skillsData = [
   {
     title: 'FRONTEND',
-    desc: 'React, Next.js, WebGL, Three.js, GSAP, Framer Motion, Tailwind, Vanilla CSS.',
+    desc: 'React, HTML, CSS, Javascript.',
   },
   {
     title: 'BACKEND',
-    desc: 'Node.js, Express, Python, Go. Building scalable microservices and APIs.',
+    desc: 'Node.js, Express, Python, Java, Spring Boot, FastAPI. Building scalable microservices and APIs.',
   },
   {
     title: 'PERFORMANCE',
-    desc: 'Obsessed with 60fps. Optimization, memoization, custom shaders.',
+    desc: 'Obsessed with 60fps.',
   },
   {
     title: 'DATABASE',
-    desc: 'PostgreSQL, MongoDB, Redis. Data modeling and efficient querying.',
+    desc: 'PostgreSQL and MongoDB.',
   },
   {
     title: 'DEPLOYMENT',
-    desc: 'Docker, AWS, Vercel, CI/CD pipelines, Github Actions.',
+    desc: 'Docker, Kubernetes, AWS, Azure, CI/CD pipelines, Github Actions.',
   }
 ]
 
